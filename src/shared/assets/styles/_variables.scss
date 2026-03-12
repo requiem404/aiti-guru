@@ -10,6 +10,7 @@
   --bg-input: #f3f4f6;
   --bg-gray: #b2b3b9;
   --bg-f3: #f3f3f3;
+  --bg-modal-overlay: #00000080;
   --text: #232323;
   --text-secondary: #e0e0e0;
   --text-tertiary: #ebebeb;
@@ -25,4 +26,7 @@
   // fonts
   --inter: 'Inter', sans-serif;
   --cairo: 'Cairo', sans-serif;
+
+  // z-index
+  --z-index-modal: 1000;
 }

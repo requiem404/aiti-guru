@@ -3,6 +3,7 @@ import { type FC } from 'react';
 import { Button } from '@shared/ui/button';
 import { Pagination } from '@shared/ui/pagination';
 import { getClasses } from './styles/get-classes';
+import { useShowAddProductModal } from '@features/product/add-product';
 
 export type DashboardProps = {
   pageCount: number;
@@ -26,6 +27,8 @@ export const Dashboard: FC<DashboardProps> = ({
   handleSort,
 }) => {
   const { cnRoot, cnTitle, cnHeader } = getClasses();
+
+  const { showAddProductModal } = useShowAddProductModal();
 
   const getSortValue = (fileld: string) => {
     if (sortBy === fileld && sortOrder === 'asc') return '▲';
@@ -54,7 +57,9 @@ export const Dashboard: FC<DashboardProps> = ({
       <header className={cnHeader}>
         <h3 className={cnTitle}>Все позиции</h3>
         <div>
-          <Button size="small">Добавить</Button>
+          <Button size="small" onClick={showAddProductModal}>
+            Добавить
+          </Button>
         </div>
       </header>
       <table>

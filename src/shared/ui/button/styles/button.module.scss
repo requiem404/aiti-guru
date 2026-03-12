@@ -39,8 +39,10 @@
   color: var(--text);
   background-color: var(--bg-input);
   border: 1px solid var(--border-secondary);
+  transition: all 0.2s ease-in;
 
   &:hover:not(:disabled) {
+    color: var(--text-contrast);
     background-color: var(--bg-secondary);
   }
 }
