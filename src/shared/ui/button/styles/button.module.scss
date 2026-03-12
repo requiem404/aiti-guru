@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: center;
   width: auto;
-  min-height: 54px;
   padding: 16px 20px;
 
   border-radius: 12px;
@@ -46,16 +45,14 @@
   }
 }
 
-.button--size-sm {
-  min-height: 36px;
-  padding: 8px 16px;
-  font-size: 13px;
+.button--small {
+  min-height: 42px;
+  padding: 16px 20px;
 }
 
-.button--size-lg {
-  min-height: 48px;
-  padding: 12px 24px;
-  font-size: 16px;
+.button--medium {
+  min-height: 54px;
+  padding: 16px 20px;
 }
 
 .button--full-width {

@@ -1,0 +1,86 @@
+.button-pagination {
+  $parent: &;
+
+  @include body-b4;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  margin: 0 6px 0 0;
+  color: var(--text-primary);
+  text-align: center;
+  word-break: break-all;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  &--large {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  &--medium {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  &--small {
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  &:not(:disabled):hover {
+    border: 1px solid var(--border);
+  }
+
+  &:not(:disabled, :active):focus {
+    outline: 4px solid var(--system-focus-50);
+  }
+
+  &:active:focus {
+    outline: none;
+  }
+
+  &:not(#{&}--loading):disabled {
+    color: var(--text-disabled);
+    cursor: not-allowed;
+  }
+
+  &--active {
+    box-shadow:
+      0 4px 16px 0 rgba(0, 0, 0, 0.08),
+      0 0 16px 0 rgba(0, 0, 0, 0.08);
+  }
+
+  &--loading {
+
+    #{$parent}__before,
+    #{$parent}__text,
+    #{$parent}__after,
+    #{$parent}__icon {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.button-pagination--ellipsis {
+  cursor: text;
+
+  &:not(:disabled):hover {
+    border: 0;
+  }
+
+  &:not(:disabled, :active):focus {
+    outline: none;
+  }
+}
+
+.button-pagination__text {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: center;
+}
