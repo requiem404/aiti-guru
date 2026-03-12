@@ -1,4 +1,4 @@
-import type { ProductsResponse } from '@entities/product';
+import type { ProductsResponse, SortOrder } from '@entities/product';
 import { type FC } from 'react';
 import { Button } from '@shared/ui/button';
 import { Pagination } from '@shared/ui/pagination';
@@ -7,15 +7,33 @@ import { getClasses } from './styles/get-classes';
 export type DashboardProps = {
   pageCount: number;
   pageNumber: number;
-  isFetching: boolean;
+  isLoading: boolean;
   productsData?: ProductsResponse;
+  sortBy?: string;
+  sortOrder?: SortOrder;
   setPage: (page: number) => void;
+  handleSort: (field: string) => void;
 };
 
-export const Dashboard: FC<DashboardProps> = ({ productsData, pageCount, pageNumber, setPage, isFetching }) => {
+export const Dashboard: FC<DashboardProps> = ({
+  sortBy,
+  sortOrder,
+  productsData,
+  pageCount,
+  pageNumber,
+  isLoading,
+  setPage,
+  handleSort,
+}) => {
   const { cnRoot, cnTitle, cnHeader } = getClasses();
 
-  if (isFetching) {
+  const getSortValue = (fileld: string) => {
+    if (sortBy === fileld && sortOrder === 'asc') return '▲';
+    if (sortBy === fileld && sortOrder === 'desc') return '▼';
+    return '';
+  };
+
+  if (isLoading) {
     return (
       <div className={cnRoot}>
         <h2>Fetching...</h2>
@@ -42,11 +60,11 @@ export const Dashboard: FC<DashboardProps> = ({ productsData, pageCount, pageNum
       <table>
         <thead>
           <tr>
-            <th>title</th>
-            <th>brand</th>
-            <th>id</th>
-            <th>rating</th>
-            <th>price</th>
+            <th onClick={() => handleSort('title')}>title {getSortValue('title')}</th>
+            <th onClick={() => handleSort('brand')}>brand {getSortValue('brand')}</th>
+            <th onClick={() => handleSort('id')}>id {getSortValue('id')}</th>
+            <th onClick={() => handleSort('rating')}>rating {getSortValue('rating')}</th>
+            <th onClick={() => handleSort('price')}>price {getSortValue('price')}</th>
           </tr>
         </thead>
 

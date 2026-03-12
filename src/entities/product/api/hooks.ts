@@ -1,5 +1,3 @@
-// hooks/useProducts.ts
-
 import { useQuery } from '@tanstack/react-query';
 import { productApi } from './product-api';
 import type { ProductsQueryParams, SearchProductsParams } from '../model/types';
@@ -32,6 +30,5 @@ export const useSearchProducts = (params: SearchProductsParams) => {
   return useQuery({
     queryKey: [...productKeys.lists(), 'search', params],
     queryFn: () => productApi.searchProducts(params),
-    enabled: !!params.q,
   });
 };

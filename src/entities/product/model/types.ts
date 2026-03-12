@@ -40,3 +40,5 @@ export interface SearchProductsParams extends ProductsQueryParams {
 export interface ProductsByCategoryParams extends ProductsQueryParams {
   category: string;
 }
+
+export type SortOrder = 'asc' | 'desc' | undefined;

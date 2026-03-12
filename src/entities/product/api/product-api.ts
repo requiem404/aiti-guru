@@ -29,7 +29,6 @@ export const productApi = {
     return response.data;
   },
 
-  // Get single product by ID
   getProductById: async (id: number): Promise<Product> => {
     const response = await fetch(`${BASE_PRODUCT_URL}/${id}`);
     if (!response.ok) {
@@ -39,12 +38,10 @@ export const productApi = {
     return response.json();
   },
 
-  // Search products
   searchProducts: async (params: SearchProductsParams): Promise<ProductsResponse> => {
     const { q, ...restParams } = params;
     const searchParams = new URLSearchParams({ q, ...restParams } as any);
 
-    // Handle select array if present
     if (restParams.select && Array.isArray(restParams.select)) {
       searchParams.set('select', restParams.select.join(','));
     }

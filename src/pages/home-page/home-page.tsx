@@ -7,7 +7,18 @@ import { Controller, useForm } from 'react-hook-form';
 
 export const HomePage = () => {
   const { cnRoot, cnHeader, cnTitle } = getClasses();
-  const { page, totalPages, productsData, isLoading, isFetching, goToPage, handleSearch } = useGetProducts();
+  const {
+    page,
+    totalPages,
+    productsData,
+    isLoading,
+    isFetching,
+    sortBy,
+    sortOrder,
+    goToPage,
+    handleSearch,
+    handleSort,
+  } = useGetProducts();
 
   const { control } = useForm({
     defaultValues: {
@@ -37,11 +48,14 @@ export const HomePage = () => {
       </header>
 
       <Dashboard
+        sortBy={sortBy}
+        sortOrder={sortOrder}
         pageNumber={page}
         pageCount={totalPages}
         productsData={productsData}
+        handleSort={handleSort}
         setPage={goToPage}
-        isFetching={isLoading || isFetching}
+        isLoading={isLoading}
       />
     </div>
   );
