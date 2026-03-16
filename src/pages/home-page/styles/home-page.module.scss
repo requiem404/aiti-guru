@@ -1,0 +1,21 @@
+.home-page {
+  padding-top: 22px;
+  min-height: 100vh;
+  background-color: var(--bg-f3);
+
+  &__header {
+    display: grid;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-bottom: 32px;
+    padding: 26px 30px;
+    background-color: var(--bg-white);
+    gap: 32px
+  }
+
+  &__title {
+    @include heading-h3;
+  }
+}

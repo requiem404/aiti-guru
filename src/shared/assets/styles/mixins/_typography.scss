@@ -1,0 +1,47 @@
+$inter: var(--inter);
+$cairo: var(--cairo);
+
+@mixin heading-h1 {
+  @include font($size: 40px, $weight: 600, $lineHeight: 110%);
+  font-family: $inter;
+}
+
+@mixin heading-h2 {
+  @include font($size: 32px, $weight: 600, $lineHeight: 110%);
+  font-family: $inter;
+}
+
+@mixin heading-h3 {
+  @include font($size: 24px, $weight: 700, $lineHeight: 110%);
+  font-family: $cairo;
+}
+
+@mixin heading-h4 {
+  @include font($size: 20px, $weight: 600, $lineHeight: 110%);
+  font-family: $cairo;
+}
+
+@mixin body-b1 {
+  @include font($size: 18px, $weight: 500, $lineHeight: 150%);
+  font-family: $inter;
+}
+
+@mixin body-b2 {
+  @include font($size: 18px, $weight: 600, $lineHeight: 120%);
+  font-family: $inter;
+}
+
+@mixin body-b3 {
+  @include font($size: 16px, $weight: 500, $lineHeight: 150%);
+  font-family: $inter;
+}
+
+@mixin body-b4 {
+  @include font($size: 14px, $weight: 400, $lineHeight: 120%);
+  font-family: $cairo;
+}
+
+@mixin body-b5 {
+  @include font($size: 16px, $weight: 700, $lineHeight: 150%);
+  font-family: $cairo;
+}

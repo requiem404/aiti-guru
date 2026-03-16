@@ -1,0 +1,21 @@
+.dashboard-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  background: var(--bg-white);
+  transition: border-color 0.2s, background-color 0.2s;
+
+  &:hover {
+    border-color: var(--tertiary);
+  }
+
+  &--checked {
+    background: var(--tertiary);
+    border-color: var(--tertiary);
+  }
+}
