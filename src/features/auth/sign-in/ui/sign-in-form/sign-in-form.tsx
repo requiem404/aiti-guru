@@ -16,7 +16,6 @@ import { SvgAitiLogo } from '@shared/icons/components/aiti-logo';
 import { useMutation } from '@tanstack/react-query';
 import { userApi, type LoginCredentials, useUserStore } from '@entities/user';
 
-//TODO: вернуться закончить верстку
 export const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { setUserData } = useUserStore();
@@ -79,7 +78,7 @@ export const SignInForm = () => {
                 value={field.value}
                 onChange={field.onChange}
                 onBlur={field.onBlur}
-                placeholder="test"
+                placeholder="emilys"
                 leftIcon={<SvgUserIcon />}
                 rightIcon={<SvgCancel />}
                 onRightIconClick={() => field.onChange('')}

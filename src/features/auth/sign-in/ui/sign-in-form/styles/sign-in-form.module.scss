@@ -1,8 +1,9 @@
 .sign-in-form {
   width: 527px;
   padding: 6px;
-  background-color: gray;
   border-radius: 40px;
+  box-shadow: 0 24px 80px rgba(17, 24, 39, 0.12);
+  background-color: white;
 
   &__content {
     display: flex;
@@ -11,7 +12,7 @@
     width: 100%;
     padding: 48px;
     border-radius: 34px;
-    background-color: white;
+    background: #fff linear-gradient(360deg, rgba(35, 35, 35, 0) 50%, rgba(35, 35, 35, 0.06) 100%);
   }
 
   &__logo {
@@ -21,11 +22,14 @@
   &__title {
     @include heading-h1;
     margin-bottom: 12px;
+    text-align: center;
   }
 
   &__description {
     @include body-b1;
     margin-bottom: 32px;
+    color: var(--text-muted);
+    text-align: center;
   }
 
   &__inputs {
@@ -38,9 +42,50 @@
 
   &__checkbox {
     margin-bottom: 20px;
+    width: 100%;
   }
 
   &__button {
     margin-bottom: 16px;
+    width: 100%;
+  }
+
+  &__or {
+    @include body-b4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 16px;
+    color: var(--text-muted);
+
+    &::before,
+    &::after {
+      content: '';
+      height: 1px;
+      flex: 1 1 auto;
+      background: var(--border);
+    }
+
+    &::before {
+      margin-right: 12px;
+    }
+
+    &::after {
+      margin-left: 12px;
+    }
+  }
+
+  &__no-account {
+    @include body-b3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+
+
+    span {
+      color: inherit;
+    }
   }
 }

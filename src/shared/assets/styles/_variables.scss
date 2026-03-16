@@ -3,10 +3,15 @@
   --primary: #242edb;
   --primary-pressed: #367aff;
   --secondary: #9b00e6;
+  --tertiary: #3C538E;
   --bg-primary: #f9f9f9;
   --bg-secondary: #423c45;
   --bg-tertiary: #2b2b2b;
+  --bg-white: #ffffff;
   --bg-input: #f3f4f6;
+  --bg-gray: #b2b3b9;
+  --bg-f3: #f3f3f3;
+  --bg-modal-overlay: #00000080;
   --text: #232323;
   --text-secondary: #e0e0e0;
   --text-tertiary: #ebebeb;
@@ -22,4 +27,7 @@
   // fonts
   --inter: 'Inter', sans-serif;
   --cairo: 'Cairo', sans-serif;
+
+  // z-index
+  --z-index-modal: 1000;
 }

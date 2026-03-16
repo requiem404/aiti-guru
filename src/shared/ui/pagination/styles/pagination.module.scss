@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  align-items: center;
+}
+
+.pagination__left-chevron {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.pagination__right-chevron {
+  opacity: 0;
+  visibility: hidden;
+}

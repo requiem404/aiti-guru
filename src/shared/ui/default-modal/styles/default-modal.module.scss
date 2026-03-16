@@ -1,0 +1,36 @@
+.modal {
+  position: relative;
+  overflow: auto;
+  border-radius: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--bg-primary);
+  pointer-events: auto;
+}
+
+.overlay {
+  position: fixed;
+  z-index: var(--z-index-modal);
+  background-color: var(--bg-modal-overlay);
+  inset: 0;
+  overflow-y: scroll;
+
+  &--hidden {
+    background: transparent;
+  }
+}
+
+div[data-radix-popper-content-wrapper]~* .overlay {
+  z-index: calc(var(--z-index-modal) + 1);
+}
+
+.overlay__content-wrapper {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  &--full-screen {
+    padding: 0;
+  }
+}
