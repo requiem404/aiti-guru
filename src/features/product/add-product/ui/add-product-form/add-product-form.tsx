@@ -9,6 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 export type AddProductFormProps = {
   closeForm: () => void;
 };
+
 const addProductSchema = z.object({
   name: z.string().min(1, 'Название обязательно'),
   description: z.string().min(1, 'Описание обязательно'),

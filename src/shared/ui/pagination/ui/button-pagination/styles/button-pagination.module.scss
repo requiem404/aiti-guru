@@ -9,9 +9,10 @@
   border: 1px solid transparent;
   border-radius: 6px;
   margin: 0 6px 0 0;
-  color: var(--text-primary);
+  color: var(--bg-gray);
   text-align: center;
   word-break: break-all;
+  border: 1px solid var(--border);
 
   &:last-child {
     margin: 0;
@@ -28,8 +29,8 @@
   }
 
   &--small {
-    min-width: 32px;
-    min-height: 32px;
+    min-width: 30px;
+    min-height: 30px;
   }
 
   &:not(:disabled):hover {
@@ -50,9 +51,8 @@
   }
 
   &--active {
-    box-shadow:
-      0 4px 16px 0 rgba(0, 0, 0, 0.08),
-      0 0 16px 0 rgba(0, 0, 0, 0.08);
+    color: var(--text-contrast);
+    background-color: #797FEA;
   }
 
   &--loading {

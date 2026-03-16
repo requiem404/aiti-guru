@@ -12,10 +12,10 @@
     margin-bottom: 32px;
     padding: 26px 30px;
     background-color: var(--bg-white);
+    gap: 32px
   }
 
   &__title {
     @include heading-h3;
-
   }
 }

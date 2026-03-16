@@ -4,6 +4,8 @@ import { SvgSearch } from '@shared/icons/components/search';
 import { Dashboard } from '@widgets/dashboard';
 import { useGetProducts } from '@features/product/get-products';
 import { Controller, useForm } from 'react-hook-form';
+import { Button } from '@shared/ui/button';
+import { useUserStore } from '@entities/user';
 
 export const HomePage = () => {
   const { cnRoot, cnHeader, cnTitle } = getClasses();
@@ -19,6 +21,11 @@ export const HomePage = () => {
     handleSearch,
     handleSort,
   } = useGetProducts();
+  const { setUserData } = useUserStore();
+
+  const logout = () => {
+    setUserData(null, false);
+  };
 
   const { control } = useForm({
     defaultValues: {
@@ -45,6 +52,10 @@ export const HomePage = () => {
             />
           )}
         />
+
+        <Button onClick={() => logout()} size="small" variant="secondary">
+          Выйти
+        </Button>
       </header>
 
       <Dashboard

@@ -40,3 +40,8 @@ $cairo: var(--cairo);
   @include font($size: 14px, $weight: 400, $lineHeight: 120%);
   font-family: $cairo;
 }
+
+@mixin body-b5 {
+  @include font($size: 16px, $weight: 700, $lineHeight: 150%);
+  font-family: $cairo;
+}

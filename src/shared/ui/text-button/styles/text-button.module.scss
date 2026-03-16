@@ -1,11 +1,10 @@
 .text-button {
+  @include body-b2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text);
+  color: #2563eb;
   background: none;
   border: none;
   cursor: pointer;
@@ -42,6 +41,4 @@
   }
 }
 
-.text-button--as-anchor .text-button__link:hover {
-  color: #2563eb;
-}
+.text-button--as-anchor .text-button__link:hover {}

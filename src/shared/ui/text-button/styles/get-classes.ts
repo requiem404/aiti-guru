@@ -8,7 +8,7 @@ type PickedTextButtonProps = Pick<TextButtonProps, 'className'>;
 export const getClasses = ({ className }: PickedTextButtonProps) => {
   const cnRoot = cn('text-button', className);
 
-  const cnText = cn('text-button__text');
+  const cnText = cn('text-button__link');
 
   return {
     cnRoot,

@@ -6,6 +6,7 @@
   justify-content: center;
   width: auto;
   padding: 16px 20px;
+  gap: 15px;
 
   border-radius: 12px;
   cursor: pointer;
@@ -48,12 +49,13 @@
 }
 
 .button--small {
-  min-height: 42px;
+  @include body-b4;
+  height: 42px;
   padding: 16px 20px;
 }
 
 .button--medium {
-  min-height: 54px;
+  height: 54px;
   padding: 16px 20px;
 }
 
